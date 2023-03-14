@@ -7,12 +7,12 @@
       yum:
         name: nginx
         state: latest
+    - name: create web page
+      copy:
+        src: /root/myassignment/index.html
+        dest: /usr/share/nginx/html/
     - name: start nginx service
       service:
         name: nginx
         state: started
-    - name: create web page
-      copy:
-        src: /root/myassignment/index.html
-        dest: /var/www/html/index.html
 ...
